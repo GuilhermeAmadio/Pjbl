@@ -7,6 +7,8 @@ public class Game {
 
     public static void main(String[] args) {
         Territorio territorio = new Territorio("Game");
+        //Score.ReadHighscoreFromFile();
+        ReadFile.ReadFromFile();
 
         territorio.jogar();
     }

@@ -15,6 +15,9 @@ public class Menu {
         g2d.drawString("Jogo por:", 80, 200);
         g2d.drawString("Guilherme Amadio", 10, 250);
         g2d.drawString("Diogo Zakovicz", 40, 300);
+
+        g2d.drawString("Highscore: " + Score.Highscore(), 40, 400);
+
         g2d.drawString("Aperte espaço", 40, 500);
         g2d.drawString("para jogar", 70, 550);
     }
@@ -25,6 +28,7 @@ public class Menu {
                 case KeyEvent.VK_SPACE -> {
                     territorio.menu = false;
                     territorio.game = true;
+                    Score.Jogada();
                     break;
                 }
             }
