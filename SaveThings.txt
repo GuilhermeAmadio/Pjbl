@@ -1,4 +1,0 @@
-Nome do Jogo: Racing Cars
-Devs: Guilherme Amadio, Diogo Zakovicz
-Highscore:
-Jogadas:
