@@ -9,13 +9,24 @@ public class End {
     }
 
     public void Draw(Graphics2D g2d) {
-        g2d.setColor(Color.GREEN);
+        g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("Verdana", Font.BOLD, 35));
-        g2d.drawString("GameOver", 70, 50);
-        g2d.drawString("Score: " + Score.ScoreGained(), 70, 250);
-        g2d.drawString("Highscore: " + Score.Highscore(), 40, 300);
+        g2d.drawString("Gameover", 80, 50);
 
-        g2d.drawString("Aperte enter", 50, 500);
+        g2d.setColor(Color.BLACK);
+        g2d.drawString("Score: ", 70, 250);
+        g2d.setColor(Color.GREEN);
+        g2d.drawString("" + Score.ScoreGained(), 210, 250);
+        g2d.setColor(Color.BLACK);
+        g2d.drawString("Highscore: ", 40, 300);
+        g2d.setColor(Color.GREEN);
+        g2d.drawString("" + Score.Highscore(), 260, 300);
+
+        g2d.setColor(Color.BLACK);
+        g2d.drawString("Aperte ", 60, 500);
+        g2d.setColor(Color.RED);
+        g2d.drawString("enter", 200, 500);
+        g2d.setColor(Color.BLACK);
         g2d.drawString("para voltar", 70, 550);
     }
 

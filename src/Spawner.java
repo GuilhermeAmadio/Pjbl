@@ -7,7 +7,7 @@ public class Spawner extends Collision {
     private ArrayList<DescentObject> objects = new ArrayList<>();
     private ArrayList<EnemyCar> enemyCars = new ArrayList<>();
     private boolean canSpawnEnemy = true, canSpawnGuardrail = true, canSpawnLine = true;
-    private long currentTime, cdEnemy, cdEnemyMax = 3000;
+    private long currentTime, cdEnemy, cdEnemyMax = 1700;
     private long cdGuardrail, cdGuardrailMax = 2000;
     private long cdLine, cdLineMax = 2000;
 

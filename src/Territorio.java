@@ -40,6 +40,10 @@ public class Territorio extends JPanel {
             player.Draw(g2d);
             spawner.Draw(g2d);
 
+            g2d.setColor(Color.BLACK);
+            g2d.setFont(new Font("Verdana", Font.BOLD, 20));
+            g2d.drawString("Score: " + Score.ScoreGained(), 10, 20);
+
             if (spawner.TestColl(player.x + (50 * player.dir), player.y, player.w, player.h)) {
                 System.out.println("GameOver");
 
