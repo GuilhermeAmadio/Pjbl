@@ -5,7 +5,6 @@ import java.util.Random;
 public class Spawner extends Collision {
     private Random random = new Random();
     private ArrayList<DescentObject> objects = new ArrayList<>();
-    private ArrayList<EnemyCar> enemyCars = new ArrayList<>();
     private boolean canSpawnEnemy = true, canSpawnGuardrail = true, canSpawnLine = true;
     private long currentTime, cdEnemy, cdEnemyMax = 1700;
     private long cdGuardrail, cdGuardrailMax = 2000;
@@ -35,12 +34,6 @@ public class Spawner extends Collision {
             }
         }
 
-        for (EnemyCar enemyCar : enemyCars) {
-            if (enemyCar.remove == false) {
-                enemyCar.Draw(g2d);
-            }
-        }
-
         SpawnEnemy();
         SpawnGuardrail();
         SpawnLine();
@@ -56,8 +49,8 @@ public class Spawner extends Collision {
 
             int n = random.nextInt(0, 2);
             switch (n) {
-                case 0: enemyCars.add(new EnemyCar(255, 0, 0, 50)); break;
-                case 1: enemyCars.add(new EnemyCar(255, 0, 0, -50)); break;
+                case 0: objects.add(new EnemyCar(255, 0, 0, 50)); break;
+                case 1: objects.add(new EnemyCar(255, 0, 0, -50)); break;
             }
         }
     }
@@ -108,12 +101,16 @@ public class Spawner extends Collision {
         }
     }
 
-    public boolean TestColl(int cX, int cY, int cW, int cH) {
-        for (EnemyCar enemyCar : enemyCars) {
-            if (enemyCar.remove == false && enemyCar.canCollide == true) {
-                if (TestCollision(cX, cY, enemyCar.x + enemyCar.offset, enemyCar.y, enemyCar.h)) {
-                    enemyCar.canCollide = false;
-                    return true;
+    public boolean TestColl(int cX, int cY) {
+        for (DescentObject object : objects) {
+            if (object instanceof EnemyCar)
+            {
+                EnemyCar enemyCar = (EnemyCar)object;
+                if (enemyCar.remove == false && enemyCar.canCollide == true) {
+                    if (TestCollision(cX, cY, enemyCar.x + enemyCar.offset, enemyCar.y, enemyCar.h)) {
+                        enemyCar.canCollide = false;
+                        return true;
+                    }
                 }
             }
         }

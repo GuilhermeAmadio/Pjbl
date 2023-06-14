@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Menu {
-    Territorio territorio = null;
+    private Territorio territorio = null;
 
     public Menu(Territorio territorio) {
         this.territorio = territorio;

@@ -44,7 +44,7 @@ public class Territorio extends JPanel {
             g2d.setFont(new Font("Verdana", Font.BOLD, 20));
             g2d.drawString("Score: " + Score.ScoreGained(), 10, 20);
 
-            if (spawner.TestColl(player.x + (50 * player.dir), player.y, player.w, player.h)) {
+            if (spawner.TestColl(player.x + (50 * player.dir), player.y)) {
                 System.out.println("GameOver");
 
                 playerColl = new PlayerCollision(236, 236, 236);
@@ -57,7 +57,7 @@ public class Territorio extends JPanel {
                 end = true;
             }
 
-            if (spawner.TestColl(playerColl.x + (50 * playerColl.dir), playerColl.y, playerColl.w, playerColl.h)) {
+            if (spawner.TestColl(playerColl.x + (50 * playerColl.dir), playerColl.y)) {
                System.out.println("Points!");
                 Score.Scored(10);
             }

@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class End {
-    Territorio territorio = null;
+    private Territorio territorio = null;
 
     public End(Territorio territorio) {
         this.territorio = territorio;
